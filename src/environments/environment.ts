@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5001/analyze'
+  apiUrl: 'https://srt-profanity-checker-backend.onrender.com/analyze'
 };
