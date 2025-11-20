@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+/* ----------------------- */
+/*    GLOBAL BACKGROUND    */
+/* ----------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(
+      circle at top left,
+      #1e293b 0%,
+      #0f172a 40%,
+      #0a0f1f 100%
+  );
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+  color: #e2e8f0;
+}
+
+/* Smooth fade render */
+body {
+  animation: fadeBG 0.5s ease-out;
+}
+
+@keyframes fadeBG {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
