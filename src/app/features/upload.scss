@@ -1,0 +1,206 @@
+/* ----------------------- */
+/*   GLOBAL PAGE STYLING   */
+/* ----------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff, #f8fafc);
+  font-family: 'Inter', sans-serif;
+}
+
+/* PAGE LAYOUT */
+.layout {
+  display: flex;
+  gap: 40px;
+  padding: 50px 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ----------------------- */
+/*      LEFT SIDEBAR       */
+/* ----------------------- */
+.sidebar {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 28px;
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  animation: fadeIn 0.3s ease;
+}
+
+.sidebar h3 {
+  color: #1e293b;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.sidebar h4 {
+  color: #1e293b;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.sidebar p {
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* SAMPLE CARDS */
+.sample-card {
+  background: #f8fafc;
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.25s;
+}
+
+.sample-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.sample-banner {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.download-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ----------------------- */
+/*      MAIN CONTAINER     */
+/* ----------------------- */
+.container {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: slideUp 0.3s ease;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e293b;
+  font-size: 28px;
+}
+
+/* FILE INPUT */
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* ----------------------- */
+/*      RESULTS BLOCK      */
+/* ----------------------- */
+.results {
+  background: #f8fafc;
+  padding: 28px;
+  border-radius: 18px;
+  margin-top: 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.results h3 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.results h4 {
+  color: #1e3a8a;
+  margin-top: 15px;
+}
+
+.results ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.results li {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  color: #1e3a8a;
+}
+
+/* ----------------------- */
+/*       ANIMATIONS        */
+/* ----------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------- */
+/*      RESPONSIVENESS     */
+/* ----------------------- */
+@media (max-width: 960px) {
+  .layout {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,64 @@
+<div class="layout">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
+
+    <h3>About This Tool</h3>
+    <p>
+      Upload any <strong>.srt</strong> subtitle file to analyze profanity,
+      detect offensive words, and generate usage statistics.
+    </p>
+
+    <h4>Sample Movie Files</h4>
+
+    <!-- MOVIE 1 -->
+    <div class="sample-card">
+      <img src="assets/fc.jpg" alt="Movie 1" class="sample-banner" />
+      <a href="assets/fc.srt" download class="download-btn">
+        Download Subtitle 1
+      </a>
+    </div>
+
+    <!-- MOVIE 2 -->
+    <div class="sample-card">
+      <img src="assets/rd.jpg" alt="Movie 2" class="sample-banner" />
+      <a href="assets/rd.srt" download class="download-btn">
+        Download Subtitle 2
+      </a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="container">
+
+    <h2>SRT Profanity Checker</h2>
+
+    <input type="file" (change)="onFileSelected($event)" accept=".srt" />
+
+    <button (click)="uploadFile()" [disabled]="!selectedFile || loading">
+      {{ loading ? 'Analyzing...' : 'Upload & Analyze' }}
+    </button>
+
+    @if (results()) {
+      <div class="results">
+        <h3>Analysis Result</h3>
+
+        <p>
+          <strong>Total Profane Lines:</strong>
+          {{ results().total_profane_lines }}
+        </p>
+
+        <h4>Profane Words Count</h4>
+
+        <ul>
+          @for (item of results().word_counts; track $index) {
+            <li>{{ item[0] }} — {{ item[1] }}</li>
+          }
+        </ul>
+      </div>
+    }
+
+  </div>
+
+</div>
